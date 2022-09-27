@@ -1,2 +1,2 @@
-# PhotoAPIApp
+# InternshipGiphy
 для стажировки
