@@ -1,2 +1,2 @@
 # PhotoAPIApp
-test
+для стажировки
