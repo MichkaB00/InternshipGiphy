@@ -1,7 +1,6 @@
-package com.example.myapplication;
+package com.example.myapplication.activity;
 
 
-import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
@@ -12,13 +11,12 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.TextView;
 
-import com.android.volley.Request;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonObjectRequest;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
+import com.example.myapplication.api.APIClient;
+import com.example.myapplication.model.Data;
+import com.example.myapplication.model.DataModel;
+import com.example.myapplication.adapter.ImageAdapter;
+import com.example.myapplication.model.ImageGif;
+import com.example.myapplication.R;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -72,17 +70,6 @@ public class MainActivity extends AppCompatActivity {
             public void onFailure(Call<ImageGif> call, Throwable t) {
                 Log.d("TAG", "onFailure: " + t.getMessage());
             }
-//                Log.d("TAG", String.valueOf(response.code()));
-//                imageGifs = response.body().getData();
-
-//                imageGifs.forEach(name -> {
-//                    String url = name.getImages().getOriginal().getUrl();
-//                    textV.append(url);
-//                    Log.d("TAG", url);
-//                });
-//                Log.d("TAG", String.valueOf(a));
-//                textV.setText((CharSequence) a);
-//                Log.d("TAG", imageGifs.toString());
         });
 
 
