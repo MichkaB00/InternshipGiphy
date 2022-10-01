@@ -7,6 +7,6 @@ import retrofit2.Call
 interface APIInterface {
 
     @GET("v1/gifs/trending?api_key=QLoecPd2N8okaKgOqU0KCUx7zbFUB0cZ")
-    fun photos1(): Call<DataArray>
+    fun photos(): Call<DataArray>
 
 }

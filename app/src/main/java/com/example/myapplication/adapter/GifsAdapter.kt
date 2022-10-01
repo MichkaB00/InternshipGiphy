@@ -34,7 +34,7 @@ class GifsAdapter(private val context: Context, private val gifts: List<DataObje
 
 
     class ViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView) {
-        val imageView = itemView.findViewById<ImageView>(R.id.imageView)
+        val imageView: ImageView = itemView.findViewById(R.id.imageView)
     }
 
 }

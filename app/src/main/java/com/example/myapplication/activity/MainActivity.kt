@@ -31,11 +31,12 @@ class MainActivity : AppCompatActivity() {
         recyclerView.layoutManager = GridLayoutManager(this, 2)
 
 
-        client.photos1().enqueue(object : Callback<DataArray> {
+        client.photos().enqueue(object : Callback<DataArray> {
             override fun onResponse(call: Call<DataArray>, response: Response<DataArray>) {
                 if (response.isSuccessful) {
-                    val data = response.body()
-                    gift.addAll(data?.data!!)
+                    val body = response.body()
+                    gift.addAll(body?.data!!)
+                    Log.d("TAG", "onResponse: " + body.data)
                     adapter1.notifyDataSetChanged()
                 }
             }
