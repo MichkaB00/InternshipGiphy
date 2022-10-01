@@ -12,7 +12,7 @@ class FullImage : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_full_image)
         imageView = findViewById(R.id.fullImage)
-        Glide.with(this).load(intent.getStringExtra("url"))
-            .into(imageView!!)
+        val url = intent.getStringExtra("url")
+        Glide.with(this).load(url).into(imageView!!)
     }
 }
