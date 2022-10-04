@@ -2,6 +2,7 @@ package com.example.myapplication.adapter
 
 import android.content.Context
 import android.content.Intent
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,7 +10,7 @@ import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.myapplication.R
-import com.example.myapplication.activity.FullImage
+import com.example.myapplication.fragment.FullGifFragment
 import com.example.myapplication.models.DataObject
 
 class GifsAdapter(private val context: Context, private val gifts: List<DataObject>) : RecyclerView.Adapter<GifsAdapter.ViewHolder>() {
@@ -22,7 +23,21 @@ class GifsAdapter(private val context: Context, private val gifts: List<DataObje
         val gift = gifts[position]
         Glide.with(context).load(gift.images.original.url).into(holder.imageView)
         holder.imageView.setOnClickListener {
-            val intent = Intent(context, FullImage::class.java)
+
+
+            val bundle = Bundle()
+            bundle.putString("url", gift.images.original.url)
+
+            val fragobj = FullGifFragment()
+            fragobj.arguments = bundle
+
+
+            val mainFragment = FullGifFragment()
+            mainFragment.arguments = Bundle().apply {
+                putString("url", gift.images.original.url)
+            }
+
+            val intent = Intent(context, FullGifFragment::class.java)
             intent.putExtra("url", gift.images.original.url)
             context.startActivity(intent)
         }

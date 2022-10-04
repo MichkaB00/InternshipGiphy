@@ -8,6 +8,7 @@ import com.example.myapplication.R
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.myapplication.adapter.GifsAdapter
+import com.example.myapplication.databinding.ActivityMainBinding
 import com.example.myapplication.models.DataArray
 import com.example.myapplication.models.DataObject
 import retrofit2.Call
@@ -17,11 +18,12 @@ import retrofit2.Response
 
 class MainActivity : AppCompatActivity() {
 
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         val recyclerView = findViewById<RecyclerView>(R.id.recycleView)
-
 
         val gift = ArrayList<DataObject>()
         val adapter1 = GifsAdapter(this, gift)
